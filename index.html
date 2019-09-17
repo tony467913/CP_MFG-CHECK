@@ -20,6 +20,7 @@
 	<span>Window Series</span>
 	<button class="mode selected">Vista</button>
 	<button class="mode">Vista Plus</button>
+  <button class="mode">Valencia</button>
 </div>
 
 <div>
@@ -115,10 +116,48 @@
     <td id="CA_note"></td>
     <td><button id="CA_btn" onclick="getVP_CA_Result()">Click here!</button></td>
   </tr>
+  <tr id="hideSD" style="display:none">
+    <td>SOSD & SISD</td>
+    <td><input type="number" id="SD_w" autocomplete="off" class="Calc_input" placeholder=" 24" value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="SD_h" autocomplete="off" class="Calc_input" placeholder=" 75" value="" style="font-size: 24px; width: 72px;"></td>
+    <td id="SD_result"></td>
+    <td id="SD_note"></td>
+    <td><button id="SD_btn" onclick="getSD_Result()">Click here!</button></td>
+  </tr>
+  <tr id="hideDSD" style="display:none">
+    <td>DOSD & DISD</td>
+    <td><input type="number" id="DSD_w" autocomplete="off" class="Calc_input" placeholder=" 48" value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="DSD_h" autocomplete="off" class="Calc_input" placeholder=" 75" value="" style="font-size: 24px; width: 72px;"></td>
+    <td id="DSD_result"></td>
+    <td id="DSD_note"></td>
+    <td><button id="DSD_btn" onclick="getDSD_Result()">Click here!</button></td>
+  </tr>
+  <tr id="hideDH" style="display:none">
+    <td>DH</td>
+    <td><input type="number" id="DH_w" autocomplete="off" class="Calc_input" placeholder=" 65" value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="DH_h" autocomplete="off" class="Calc_input" placeholder=" 12" value="" style="font-size: 24px; width: 72px;"></td>
+    <td id="DH_result"></td>
+    <td id="DH_note"></td>
+    <td><button id="DH_btn" onclick="getDH_Result()">Click here!</button></td>
+  </tr> 
+  <tr id="hideDSL" style="display:none">
+    <td>DSL</td>
+    <td><input type="number" id="DSL_w" autocomplete="off" class="Calc_input" placeholder=" 65" value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="DSL_h" autocomplete="off" class="Calc_input" placeholder=" 12" value="" style="font-size: 24px; width: 72px;"></td>
+    <td id="DSL_result"></td>
+    <td id="DSL_note"></td>
+    <td><button id="DSL_btn" onclick="getDSL_Result()">Click here!</button></td>
+  </tr>
+  <tr id="hideTT" style="display:none">
+    <td>T&T</td>
+    <td><input type="number" id="TT_w" autocomplete="off" class="Calc_input" placeholder=" 65" value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="TT_h" autocomplete="off" class="Calc_input" placeholder=" 12" value="" style="font-size: 24px; width: 72px;"></td>
+    <td id="TT_result"></td>
+    <td id="TT_note"></td>
+    <td><button id="TT_btn" onclick="getTT_Result()">Click here!</button></td>
+  </tr>
 
 
-
- 
 </tbody>
 </table>
 
