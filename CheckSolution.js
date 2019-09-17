@@ -5,11 +5,23 @@ var sh_result = document.getElementById('SH_result');
 var xo_result = document.getElementById('XO_result');
 var eqxox_result = document.getElementById('EQXOX_result');
 var uneqxox_result = document.getElementById('UNEQXOX_result');
-var pw_note = document.getElementById('PW_note')
-var xo_note = document.getElementById('XO_note')
-var sh_note = document.getElementById('SH_note')
-var eqxox_note = document.getElementById('EQXOX_note')
-var uneqxox_note = document.getElementById('UNEQXOX_note')
+var pw_note = document.getElementById('PW_note');
+var xo_note = document.getElementById('XO_note');
+var sh_note = document.getElementById('SH_note');
+var eqxox_note = document.getElementById('EQXOX_note');
+var uneqxox_note = document.getElementById('UNEQXOX_note');
+var _2PD_note = document.getElementById('2PD_note');
+var _3PD_note = document.getElementById('3PD_note');
+var _4PD_note = document.getElementById('4PD_note');
+var _2PD_result = document.getElementById('2PD_result');
+var _3PD_result = document.getElementById('3PD_result');
+var _4PD_result = document.getElementById('4PD_result');
+var ca_result = document.getElementById('CA_result');
+var aw_result = document.getElementById('AW_result');
+var ca_note = document.getElementById('CA_note');
+var aw_note = document.getElementById('AW_note');
+
+
 
 
 init();
@@ -524,6 +536,16 @@ function reset(){
  xo_note.innerHTML="";
  eqxox_note.innerHTML="";
  uneqxox_note.innerHTML=""; 
+ _2PD_note.innerHTML = "";
+ _2PD_result.innerHTML = "";
+ _3PD_note.innerHTML = "";
+ _3PD_result.innerHTML = "";
+ _4PD_note.innerHTML = "";
+ _4PD_result.innerHTML = "";
+ aw_result.innerHTML = "";
+ aw_note.innerHTML = "";
+ ca_note.innerHTML = "";
+ ca_result.innerHTML = "";
 
 }
 
