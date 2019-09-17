@@ -20,6 +20,14 @@ var ca_result = document.getElementById('CA_result');
 var aw_result = document.getElementById('AW_result');
 var ca_note = document.getElementById('CA_note');
 var aw_note = document.getElementById('AW_note');
+var dh_result = document.getElementById('DH_result');
+var dh_note = document.getElementById('DH_note');
+var dsl_result = document.getElementById('DSL_result');
+var dsl_note = document.getElementById('DSL_note');
+var sd_result = document.getElementById('SD_result');
+var sd_note = document.getElementById('SD_note');
+var dsd_result = document.getElementById('DSD_result');
+var dsd_note = document.getElementById('DSD_note');
 
 
 
@@ -37,6 +45,7 @@ function setupModeButtons(){
     modeButtons[i].addEventListener("click", function(){
       modeButtons[0].classList.remove("selected");
       modeButtons[1].classList.remove("selected");
+      modeButtons[2].classList.remove("selected");
       this.classList.add("selected");
       // this.textContent === "Vista" ? 
       if (this.textContent=="Vista") {
@@ -50,7 +59,13 @@ function setupModeButtons(){
         document.getElementById("hide4pd").style.display = "table-row";
         document.getElementById("hideAW").style.display = "none";
         document.getElementById("hideCA").style.display = "none";
+        document.getElementById("hideDH").style.display = "none";  
+        document.getElementById("hideDSL").style.display = "none"; 
+        document.getElementById("hideSD").style.display = "none";   
+        document.getElementById("hideDSD").style.display = "none"; 
+        document.getElementById("hideTT").style.display = "none"; 
       } else {
+        if (this.textContent=="Vista Plus") {
         document.getElementById('PW_btn').onclick = function() {getVP_PW_Result();}
         document.getElementById('SH_btn').onclick = function() {getVP_SH_Result();}
         document.getElementById('XO_btn').onclick = function() {getVP_XO_Result();}
@@ -61,6 +76,29 @@ function setupModeButtons(){
         document.getElementById("hide4pd").style.display = "none";
         document.getElementById("hideAW").style.display = "table-row";
         document.getElementById("hideCA").style.display = "table-row";
+        document.getElementById("hideDH").style.display = "none";  
+        document.getElementById("hideDSL").style.display = "none";  
+        document.getElementById("hideSD").style.display = "none";   
+        document.getElementById("hideDSD").style.display = "none";  
+        document.getElementById("hideTT").style.display = "none";  
+        } else {
+        document.getElementById('PW_btn').onclick = function() {getVal_PW_Result();}
+        document.getElementById('SH_btn').onclick = function() {getVal_SH_Result();}
+        document.getElementById('XO_btn').onclick = function() {getVal_XO_Result();}
+        document.getElementById('EQXOX_btn').onclick = function() {getVal_EQXOX_Result();}
+        document.getElementById('UNEQXOX_btn').onclick = function() {getVal_UNEQXOX_Result();}
+        document.getElementById("hide2pd").style.display = "none";
+        document.getElementById("hide3pd").style.display = "none";
+        document.getElementById("hide4pd").style.display = "none";
+        document.getElementById("hideAW").style.display = "table-row";
+        document.getElementById("hideCA").style.display = "table-row"; 
+        document.getElementById("hideSD").style.display = "table-row";   
+        document.getElementById("hideDSD").style.display = "table-row";  
+        document.getElementById("hideDH").style.display = "table-row";  
+        document.getElementById("hideDSL").style.display = "table-row";  
+        document.getElementById("hideTT").style.display = "table-row";  
+        }
+
       }
       reset();
     });
@@ -525,6 +563,9 @@ function get4PD_Result(){
 
 
 
+
+
+
 function reset(){
  pw_result.innerHTML="";
  sh_result.innerHTML="";
@@ -546,6 +587,14 @@ function reset(){
  aw_note.innerHTML = "";
  ca_note.innerHTML = "";
  ca_result.innerHTML = "";
+ dh_result.innerHTML = "";
+ dh_note.innerHTML = "";
+ dsl_result.innerHTML = "";
+ dsl_note.innerHTML = "";
+ sd_result.innerHTML = "";
+ sd_note.innerHTML = "";
+ dsd_result.innerHTML = "";
+ dsd_note.innerHTML = "";
 
 }
 
