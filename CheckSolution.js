@@ -33,12 +33,22 @@ function setupModeButtons(){
         document.getElementById('XO_btn').onclick = function() {getXO_Result();}
         document.getElementById('EQXOX_btn').onclick = function() {getEQXOX_Result();}
         document.getElementById('UNEQXOX_btn').onclick = function() {getUNEQXOX_Result();}
+        document.getElementById("hide2pd").style.display = "table-row";
+        document.getElementById("hide3pd").style.display = "table-row";
+        document.getElementById("hide4pd").style.display = "table-row";
+        document.getElementById("hideAW").style.display = "none";
+        document.getElementById("hideCA").style.display = "none";
       } else {
         document.getElementById('PW_btn').onclick = function() {getVP_PW_Result();}
         document.getElementById('SH_btn').onclick = function() {getVP_SH_Result();}
         document.getElementById('XO_btn').onclick = function() {getVP_XO_Result();}
         document.getElementById('EQXOX_btn').onclick = function() {getVP_EQXOX_Result();}
         document.getElementById('UNEQXOX_btn').onclick = function() {getVP_UNEQXOX_Result();}
+        document.getElementById("hide2pd").style.display = "none";
+        document.getElementById("hide3pd").style.display = "none";
+        document.getElementById("hide4pd").style.display = "none";
+        document.getElementById("hideAW").style.display = "table-row";
+        document.getElementById("hideCA").style.display = "table-row";
       }
       reset();
     });
@@ -381,7 +391,7 @@ function getVP_CA_Result(){
   var width = document.getElementById('CA_w').value;
   var height = document.getElementById('CA_h').value;
   var note = document.getElementById('CA_note')
-  if (16<=width && width<=36 && 18<=height && height<=72 && width*height<=20) {
+  if (16<=width && width<=36 && 18<=height && height<=72 && width*height/144<=20) {
      result.innerHTML="PASS";
      if (width*height<=15) {
       note.innerHTML="Gold Label & 1/8 glass";
@@ -400,15 +410,108 @@ function getVP_AW_Result(){
   var width = document.getElementById('AW_w').value;
   var height = document.getElementById('AW_h').value;
   var note = document.getElementById('AW_note')
-  if (13<=width && width<=60 && 16<=height && height<=36 && width*height<=15) {
+  if (13<=width && width<=60 && 16<=height && height<=36 && width*height/144<=15) {
     result.innerHTML="PASS";
     note.innerHTML="Gold Label & 1/8 glass";    
   } 
   else {
+    if (13<=width && width<=60 && 16<=height && height<=36 && width*height/144<=20){
+      result.innerHTML="PASS";
+      note.innerHTML="No Gold Label & 3/16 glass"; 
+    } else{        
         result.innerHTML="FAIL";
-        note.innerHTML="";
+        note.innerHTML="";}
+
     }
 }
+
+function get2PD_Result(){
+  var result = document.getElementById('2PD_result');
+  var width = document.getElementById('2PD_w').value;
+  var height = document.getElementById('2PD_h').value;
+  var note = document.getElementById('2PD_note')
+  if (60<=width && width<=96 && 70<=height && height<=96 && width*height/144<=64) {
+    result.innerHTML="PASS";
+    if (width*height/144/2<=20) {
+      note.innerHTML="Gold Label & 1/8 TEMP";
+    } else {
+      note.innerHTML="Gold Label & 3/16 TEMP";
+    }   
+  } 
+  else {
+    if (60<=width && width<=120 && 70<=height && height<=82 && width*height/144<=68.33333){
+      result.innerHTML="PASS";
+      if (width*height/144/2<=20) {
+        note.innerHTML="Gold Label & 1/8 TEMP";
+      } else {
+        note.innerHTML="Gold Label & 3/16 TEMP"; 
+      }      
+    } else{        
+        result.innerHTML="FAIL";
+        note.innerHTML="";}
+    }
+}
+
+function get3PD_Result(){
+  var result = document.getElementById('3PD_result');
+  var width = document.getElementById('3PD_w').value;
+  var height = document.getElementById('3PD_h').value;
+  var note = document.getElementById('3PD_note')
+  if (90<=width && width<=144 && 70<=height && height<=92 && width*height/144/3<=32) {
+    result.innerHTML="PASS";
+    if (width*height/144/3<=20) {
+      note.innerHTML="Gold Label & 1/8 TEMP";
+    } else {
+      note.innerHTML="Gold Label & 3/16 TEMP";
+    }   
+  } 
+  else {
+    result.innerHTML="FAIL";
+    note.innerHTML="";
+  }
+}
+
+function get4PD_Result(){
+  var result = document.getElementById('4PD_result');
+  var width = document.getElementById('4PD_w').value;
+  var height = document.getElementById('4PD_h').value;
+  var note = document.getElementById('4PD_note')
+  if (120<=width && width<=192 && 70<=height && height<=92 && width*height/144<=122.67) {
+    if (width<=187.5) {
+      result.innerHTML="PASS w/ Rrtro-Fit, Nail-on, Block";
+    } else {
+      if (width<=189) {
+        result.innerHTML="PASS w/ Nail-on, Block";
+      } else {
+        result.innerHTML="PASS w/ Block";
+      }
+    }
+    
+    if (width*height/144/4<=20) {
+      note.innerHTML="Gold Label & 1/8 TEMP";
+    } else {
+      note.innerHTML="Gold Label & 3/16 TEMP";
+    }   
+  } 
+  else {
+    if (60<=width && width<=120 && 70<=height && height<=82 && width*height<=68.33333){
+      result.innerHTML="PASS";
+      if (width*height/144/3<=20) {
+        note.innerHTML="Gold Label & 1/8 TEMP";
+      } else {
+        note.innerHTML="Gold Label & 3/16 TEMP"; 
+      }      
+    } else{        
+        result.innerHTML="FAIL";
+        note.innerHTML="";}
+    }
+}
+
+
+
+
+
+
 
 function reset(){
  pw_result.innerHTML="";
