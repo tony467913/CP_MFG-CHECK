@@ -405,9 +405,9 @@ function getSH_Result(){
   } 
   else {
       if (10<=width && width<=56 && 20<=height && 
-        height<=124 && width*height/144<=27.41667) {
-        result.innerHTML="PASS";
-        note.innerHTML="No Gold Label & 1/8 glass";        
+        height<=124 && width*height/144/2<=18) {
+        result.innerHTML="Ask Engineer";
+        note.innerHTML="";          
       }             
       else {
         result.innerHTML="FAIL";
@@ -426,9 +426,9 @@ function getVP_SH_Result(){
   } 
   else {
       if (10<=width && width<=56 && 20<=height && 
-        height<=124 && width*height/144<=28) {
-        result.innerHTML="PASS";
-        note.innerHTML="No Gold Label & 1/8 glass";        
+        height<=124 && width*height/144/2<=18) {
+        result.innerHTML="Ask Engineer";
+        note.innerHTML="";            
       }             
       else {
         result.innerHTML="FAIL";
