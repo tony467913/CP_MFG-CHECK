@@ -49,6 +49,8 @@ function setupModeButtons(){
       this.classList.add("selected");
       // this.textContent === "Vista" ? 
       if (this.textContent=="Vista") {
+        document.getElementById("customers").style.display = "table";
+        document.getElementById("shapes").style.display = "none";
         document.getElementById('PW_btn').onclick = function() {getPW_Result();}
         document.getElementById('SH_btn').onclick = function() {getSH_Result();}
         document.getElementById('XO_btn').onclick = function() {getXO_Result();}
@@ -64,8 +66,17 @@ function setupModeButtons(){
         document.getElementById("hideSD").style.display = "none";   
         document.getElementById("hideDSD").style.display = "none"; 
         document.getElementById("hideTT").style.display = "none"; 
+
+        document.getElementById("hidePW").style.display = "table-row";
+        document.getElementById("hideSH").style.display = "table-row";
+        document.getElementById("hideXO").style.display = "table-row";
+        document.getElementById("hideEQXOX").style.display = "table-row";
+        document.getElementById("hideUNEQXOX").style.display = "table-row";
+
       } else {
         if (this.textContent=="Vista Plus") {
+        document.getElementById("customers").style.display = "table";
+        document.getElementById("shapes").style.display = "none";
         document.getElementById('PW_btn').onclick = function() {getVP_PW_Result();}
         document.getElementById('SH_btn').onclick = function() {getVP_SH_Result();}
         document.getElementById('XO_btn').onclick = function() {getVP_XO_Result();}
@@ -81,7 +92,19 @@ function setupModeButtons(){
         document.getElementById("hideSD").style.display = "none";   
         document.getElementById("hideDSD").style.display = "none";  
         document.getElementById("hideTT").style.display = "none";  
+        document.getElementById("hidePW").style.display = "table-row";
+        document.getElementById("hideSH").style.display = "table-row";
+        document.getElementById("hideXO").style.display = "table-row";
+        document.getElementById("hideEQXOX").style.display = "table-row";
+        document.getElementById("hideUNEQXOX").style.display = "table-row";
         } else {
+          if (this.textContent=="Combos & Shapes") {
+        document.getElementById("customers").style.display = "none";
+        document.getElementById("shapes").style.display = "table";
+
+          } else {
+        document.getElementById("customers").style.display = "table";
+        document.getElementById("shapes").style.display = "none";
         document.getElementById('PW_btn').onclick = function() {getVal_PW_Result();}
         document.getElementById('SH_btn').onclick = function() {getVal_SH_Result();}
         document.getElementById('XO_btn').onclick = function() {getVal_XO_Result();}
@@ -90,15 +113,15 @@ function setupModeButtons(){
         document.getElementById("hide2pd").style.display = "none";
         document.getElementById("hide3pd").style.display = "none";
         document.getElementById("hide4pd").style.display = "none";
-        document.getElementById("hideAW").style.display = "table-row";
-        document.getElementById("hideCA").style.display = "table-row"; 
+        document.getElementById("hideAW").style.display = "none";
+        document.getElementById("hideCA").style.display = "none"; 
         document.getElementById("hideSD").style.display = "table-row";   
         document.getElementById("hideDSD").style.display = "table-row";  
         document.getElementById("hideDH").style.display = "table-row";  
         document.getElementById("hideDSL").style.display = "table-row";  
-        document.getElementById("hideTT").style.display = "table-row";  
+        document.getElementById("hideTT").style.display = "none";  
+          }
         }
-
       }
       reset();
     });
