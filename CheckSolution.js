@@ -399,13 +399,17 @@ function getSH_Result(){
 	var width = document.getElementById('SH_w').value;
 	var height = document.getElementById('SH_h').value;
   var note = document.getElementById('SH_note')
-  if (12<=width && width<=47 && 24<=height && height<=84) {
+  if (10<=width && width<=47 && 20<=height && height<=84 && width*height/144/2>=1.5) {
      result.innerHTML="PASS";
-     note.innerHTML="Gold Label & 1/8 glass";
+	  if(12<=width && 24<=height){
+	  	note.innerHTML="Gold Label & 1/8 glass";
+	  } else{
+	  	note.innerHTML="No Gold Label & 1/8 glass";
+	  }
   } 
   else {
       if (10<=width && width<=56 && 20<=height && 
-        height<=124 && width*height/144/2<=18) {
+        height<=124 && width*height/144/2<=15) {
         result.innerHTML="Ask Engineer";
         note.innerHTML="";          
       }             
@@ -420,21 +424,30 @@ function getVP_SH_Result(){
   var width = document.getElementById('SH_w').value;
   var height = document.getElementById('SH_h').value;
   var note = document.getElementById('SH_note')
-  if (15.5<=width && width<=48 && 27<=height && height<=84) {
+
+  if (15.5<=width && width<=48 && 20<=height && height<=84 && width*height/144/2>=1.5) {
      result.innerHTML="PASS";
-     note.innerHTML="Gold Label & 1/8 glass";
+	  if(15.5<=width && 27<=height){
+	  	note.innerHTML="Gold Label & 1/8 glass";
+	  } else{
+	  	note.innerHTML="No Gold Label & 1/8 glass";
+	  }
   } 
   else {
-      if (10<=width && width<=56 && 20<=height && 
-        height<=124 && width*height/144/2<=18) {
+      if (15.5<=width && width<=56 && 20<=height && 
+        height<=124 && width*height/144/2<=15) {
         result.innerHTML="Ask Engineer";
-        note.innerHTML="";            
+        note.innerHTML="";          
       }             
       else {
         result.innerHTML="FAIL";
         note.innerHTML="";
     }}
 }
+
+
+
+
 
 function getVP_CA_Result(){
   var result = document.getElementById('CA_result');
