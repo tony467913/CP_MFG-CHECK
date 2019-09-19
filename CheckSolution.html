@@ -21,11 +21,12 @@
 	<span>Window Series</span>
 	<button class="mode selected">Vista</button>
 	<button class="mode">Vista Plus</button>
-<!--   <button class="mode">Valencia</button>-->
+  <button class="mode">Combos & Shapes</button>
+<!--   <button class="mode">Valencia</button> -->
 </div>
 
 <div>
-<table id="customers">
+<table id="customers" style="display: table;">
   <tbody>
   <tr style="font-size:120%;">
     <th>Type</th>
@@ -36,16 +37,16 @@
     <th></th>
   </tr>
   
-  <tr>
+  <tr id="hidePW" style="display:table-row">
     <td>PW</td>
-    <td><input type="number" id="PW_w" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
-    <td><input type="number" id="PW_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="PW_w" placeholder="" value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="PW_h" autocomplete="off" class="Calc_input" placeholder="" value="" style="font-size: 24px; width: 72px;"></td>
     <td id="PW_result"></td>
     <td id="PW_note"></td>
     <td><button id="PW_btn" onclick="getPW_Result()">Click here!</button></td>
   </tr>
   
-  <tr>
+  <tr id="hideSH" style="display:table-row">
     <td>SH</td>
     <td><input type="number" id="SH_w" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
     <td><input type="number" id="SH_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
@@ -53,7 +54,7 @@
     <td id="SH_note"></td>
     <td><button id="SH_btn" onclick="getSH_Result()">Click here!</button></td>
   </tr>  
-  <tr>
+  <tr id="hideXO" style="display:table-row">
     <td>XO, OX</td>
     <td><input type="number" id="XO_w" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
     <td><input type="number" id="XO_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
@@ -61,7 +62,23 @@
     <td id="XO_note"></td>
     <td><button id="XO_btn" onclick="getXO_Result()">Click here!</button></td>
   </tr>
-  <tr>
+  <tr id="hideDH" style="display:none">
+    <td>DH</td>
+    <td><input type="number" id="DH_w" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="DH_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td id="DH_result"></td>
+    <td id="DH_note"></td>
+    <td><button id="DH_btn" onclick="getDH_Result()">Click here!</button></td>
+  </tr> 
+  <tr id="hideDSL" style="display:none">
+    <td>DSL</td>
+    <td><input type="number" id="DSL_w" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="DSL_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td id="DSL_result"></td>
+    <td id="DSL_note"></td>
+    <td><button id="DSL_btn" onclick="getDSL_Result()">Click here!</button></td>
+  </tr>
+  <tr id="hideEQXOX" style="display:table-row">
     <td>EQ-XOX</td>
     <td><input type="number" id="EQXOX_w" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
     <td><input type="number" id="EQXOX_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
@@ -69,7 +86,7 @@
     <td id="EQXOX_note"></td>
     <td><button id="EQXOX_btn" onclick="getEQXOX_Result()">Click here!</button></td>
   </tr>
-  <tr>
+  <tr id="hideUNEQXOX" style="display:table-row">
     <td>UNEQ-XOX</td>
     <td><input type="number" id="UNEQXOX_w" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
     <td><input type="number" id="UNEQXOX_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
@@ -133,22 +150,7 @@
     <td id="DSD_note"></td>
     <td><button id="DSD_btn" onclick="getDSD_Result()">Click here!</button></td>
   </tr>
-  <tr id="hideDH" style="display:none">
-    <td>DH</td>
-    <td><input type="number" id="DH_w" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
-    <td><input type="number" id="DH_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
-    <td id="DH_result"></td>
-    <td id="DH_note"></td>
-    <td><button id="DH_btn" onclick="getDH_Result()">Click here!</button></td>
-  </tr> 
-  <tr id="hideDSL" style="display:none">
-    <td>DSL</td>
-    <td><input type="number" id="DSL_w" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
-    <td><input type="number" id="DSL_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
-    <td id="DSL_result"></td>
-    <td id="DSL_note"></td>
-    <td><button id="DSL_btn" onclick="getDSL_Result()">Click here!</button></td>
-  </tr>
+
   <tr id="hideTT" style="display:none">
     <td>T&T</td>
     <td><input type="number" id="TT_w" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
@@ -163,6 +165,99 @@
 </table>
 
 </div>
+
+
+<div>
+<table id="shapes" style="display: none;">
+  <tbody>
+  <tr>
+    <th>Type</th>
+    <th>W</th>
+    <th>H</th>
+    <th>H1</th>
+    <th>Result</th>
+    <th>Note</th>
+    <th></th>
+  </tr>
+
+  <tr id="hidePW" style="display:table-row">
+    <td><img src="img/Arch.jpg" alt="HTML5 Icon" style="width:220px;height:190px;"></td>
+    <td><input type="number" id="PW_w" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="PW_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td></td>
+    <td id="PW_result"></td>
+    <td id="PW_note"></td>
+    <td><button id="PW_btn" onclick="getPW_Result()">Click here!</button></td>
+  </tr>
+
+  <tr id="hidePW" style="display:table-row">
+    <td><img src="img/arcleg.jpg" alt="HTML5 Icon" style="width:220px;height:190px;"></td>
+    <td><input type="number" id="PW_w" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="PW_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td></td>
+    <td id="PW_result"></td>
+    <td id="PW_note"></td>
+    <td><button id="PW_btn" onclick="getPW_Result()">Click here!</button></td>
+  </tr>
+
+  <tr id="hidePW" style="display:table-row">
+    <td><img src="img/quarterArch.jpg" alt="HTML5 Icon" style="width:220px;height:190px;"></td>
+    <td><input type="number" id="PW_w" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="PW_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td></td>
+    <td id="PW_result"></td>
+    <td id="PW_note"></td>
+    <td><button id="PW_btn" onclick="getPW_Result()">Click here!</button></td>
+  </tr>  
+
+  <tr id="hidePW" style="display:table-row">
+    <td><img src="img/rake.jpg" alt="HTML5 Icon" style="width:220px;height:190px;"></td>
+    <td><input type="number" id="PW_w" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="PW_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td></td>
+    <td id="PW_result"></td>
+    <td id="PW_note"></td>
+    <td><button id="PW_btn" onclick="getPW_Result()">Click here!</button></td>
+  </tr>
+  <tr id="hidePW" style="display:table-row">
+    <td><img src="img/triangle.jpg" alt="HTML5 Icon" style="width:220px;height:190px;"></td>
+    <td><input type="number" id="PW_w" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="PW_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td></td>
+    <td id="PW_result"></td>
+    <td id="PW_note"></td>
+    <td><button id="PW_btn" onclick="getPW_Result()">Click here!</button></td>
+  </tr>
+  
+  <tr id="hidePW" style="display:table-row">
+    <td><img src="img/topArc+xo.jpg" alt="HTML5 Icon" style="width:220px;height:190px;"></td>
+    <td><input type="number" id="PW_w" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="PW_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td></td>
+    <td id="PW_result"></td>
+    <td id="PW_note"></td>
+    <td><button id="PW_btn" onclick="getPW_Result()">Click here!</button></td>
+  </tr>
+  <tr id="hidePW" style="display:table-row">
+    <td><img src="img/topArcleg+xo.jpg" alt="HTML5 Icon" style="width:220px;height:200px;"></td>
+    <td><input type="number" id="PW_w" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td><input type="number" id="PW_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
+    <td></td>
+    <td id="PW_result"></td>
+    <td id="PW_note"></td>
+    <td><button id="PW_btn" onclick="getPW_Result()">Click here!</button></td>
+  </tr>
+
+
+
+
+
+
+</tbody>
+</table>
+</div>
+
+
 
 
 <script type="text/javascript" src="CheckSolution.js"></script>
