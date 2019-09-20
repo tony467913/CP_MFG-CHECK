@@ -45,7 +45,7 @@ function setupModeButtons(){
     modeButtons[i].addEventListener("click", function(){
       modeButtons[0].classList.remove("selected");
       modeButtons[1].classList.remove("selected");
-      modeButtons[2].classList.remove("selected");
+     // modeButtons[2].classList.remove("selected");
       this.classList.add("selected");
       // this.textContent === "Vista" ? 
       if (this.textContent=="Vista") {
