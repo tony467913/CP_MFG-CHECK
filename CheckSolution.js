@@ -195,7 +195,7 @@ function getVP_PW_Result(){
             note.innerHTML="No Gold Label & 3/16 TEMP";
           } else{
             if (width*height/144<=45 && 120>=width && 120>=height) {
-              note.innerHTML="No Gold Label & 1/4 glass";
+              note.innerHTML="No Gold Label & 1/4 TEMP";
             } else {
               note.innerHTML="No Gold Label & 1/4 TEMP";
             }
@@ -237,7 +237,7 @@ function getVal_PW_Result(){
             note.innerHTML="No Gold Label & 3/16 TEMP";
           } else{
             if (width*height/144<=45 && 120>=width && 120>=height) {
-              note.innerHTML="No Gold Label & 1/4 glass";
+              note.innerHTML="No Gold Label & 1/4 TEMP";
             } else {
               note.innerHTML="No Gold Label & 1/4 TEMP";
             }
