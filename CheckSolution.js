@@ -146,14 +146,14 @@ function getPW_Result(){
 	} 
 	else {
   		if (7<=width && width<=100 && 7<=height && 
-  			height<=100 && width*height/144<=50) {
+  			height<=100 && width*height/144<=40) {
         result.innerHTML="PASS";
         if (7<=width && width<=80 && 7<=height && 
         height<=80 && width*height/144<=20) {
           note.innerHTML="No Gold Label & 1/8 glass";        
       }
         else{
-          if (width*height/144<=33){
+          if (width*height/144<=33 && width<=96 && height<=96){
             note.innerHTML="No Gold Label & 3/16 glass";
           }
           else{
