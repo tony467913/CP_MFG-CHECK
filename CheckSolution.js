@@ -183,19 +183,19 @@ function getVP_PW_Result(){
       
   } 
   else {
-    if (15.5<=width && width<=140 && 15.5<=height && height<=140 && width*height/144<=60) {
+    if (15.5<=width && width<=140 && 15.5<=height && height<=140 && width*height/144<=40) {
       result.innerHTML="PASS";
       if (width*height/144<=15 && 80>=width && 80>=height) {
         note.innerHTML="No Gold Label & 1/8 glass";
       } else {
-        if (width*height/144<=33 && 100>=width && 100>=height) {
+        if (width*height/144<=33 && 96>=width && 96>=height) {
           note.innerHTML="No Gold Label & 3/16 glass";
         } else {
-          if (width*height/144<=50 && 100>=width && 100>=height) {
-            note.innerHTML="No Gold Label & 3/16 TEMP";
+          if (width*height/144<=45 && 96>=width && 96>=height) {
+            note.innerHTML="No Gold Label & 1/4 glass";
           } else{
-            if (width*height/144<=45 && 96>=width && 72>=height) {
-              note.innerHTML="No Gold Label & 1/4 glass";
+            if (width*height/144<=50 && 100>=width && 100>=height) {
+              note.innerHTML="No Gold Label & 3/16 TEMP";
             } else {
               note.innerHTML="No Gold Label & 1/4 TEMP";
             }
