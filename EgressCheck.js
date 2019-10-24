@@ -56,9 +56,9 @@ function setupModeButtons(){
         document.getElementById('XO_btn').onclick = function() {getXO_Egress();}
         document.getElementById('EQXOX_btn').onclick = function() {getEQXOX_Egress();}
         document.getElementById('UNEQXOX_btn').onclick = function() {getUNEQXOX_Egress();}
-        document.getElementById("hide2pd").style.display = "table-row";
-        document.getElementById("hide3pd").style.display = "table-row";
-        document.getElementById("hide4pd").style.display = "table-row";
+        document.getElementById("hide2pd").style.display = "none";
+        document.getElementById("hide3pd").style.display = "none";
+        document.getElementById("hide4pd").style.display = "none";
         document.getElementById("hideAW").style.display = "none";
         document.getElementById("hideCA").style.display = "none";
         document.getElementById("hideDH").style.display = "none";  
@@ -78,10 +78,10 @@ function setupModeButtons(){
         document.getElementById("customers").style.display = "table";
         document.getElementById("shapes").style.display = "none";
         document.getElementById('PW_btn').onclick = function() {getVP_PW_Result();}
-        document.getElementById('SH_btn').onclick = function() {getVP_SH_Result();}
-        document.getElementById('XO_btn').onclick = function() {getVP_XO_Result();}
-        document.getElementById('EQXOX_btn').onclick = function() {getVP_EQXOX_Result();}
-        document.getElementById('UNEQXOX_btn').onclick = function() {getVP_UNEQXOX_Result();}
+        document.getElementById('SH_btn').onclick = function() {getVP_SH_Egress();}
+        document.getElementById('XO_btn').onclick = function() {getVP_XO_Egress();}
+        document.getElementById('EQXOX_btn').onclick = function() {getVP_EQXOX_Egress();}
+        document.getElementById('UNEQXOX_btn').onclick = function() {getVP_UNEQXOX_Egress();}
         document.getElementById("hide2pd").style.display = "none";
         document.getElementById("hide3pd").style.display = "none";
         document.getElementById("hide4pd").style.display = "none";
@@ -679,7 +679,7 @@ function getXO_Egress(){
   var height = document.getElementById('XO_h').value;
   var note = document.getElementById('XO_note')
   var op_w, op_h, sqft;
-  op_w=width/2-3.5
+  op_w=width/2-3.375
   op_h=height-1.4375*2
   sqft=op_h*op_w/144
   note.innerHTML=Math.round(sqft*1000)/1000; 
@@ -733,7 +733,7 @@ function getEQXOX_Egress(){
   var height = document.getElementById('XO_h').value;
   var note = document.getElementById('XO_note')
   var op_w, op_h, sqft;
-  op_w=width/3-1.875
+  op_w=width/3-3.8125
   op_h=height-2.875
   sqft=op_h*op_w/144 
   note.innerHTML=Math.round(sqft*1000)/1000; 
@@ -769,7 +769,7 @@ function getVP_SH_Egress(){
   var note = document.getElementById('SH_note')
   var op_w, op_h, sqft;
   op_w=width-1.4375*2;
-  op_h=height/2-3.375;
+  op_h=height/2-5.5;
   sqft=op_h*op_w/144;
   note.innerHTML=Math.round(sqft*1000)/1000;
   if (op_w>=20 && op_h>=24 && sqft>=5.7) {
@@ -786,7 +786,7 @@ function getVP_UNEQXOX_Egress(){
   var height = document.getElementById('XO_h').value;
   var note = document.getElementById('XO_note')
   var op_w, op_h, sqft;
-  op_w=width/4-1.875;
+  op_w=width/4-2.125;
   op_h=height-2.875;
   sqft=op_h*op_w/144; 
   note.innerHTML=Math.round(sqft*1000)/1000;  
@@ -804,7 +804,7 @@ function getVP_EQXOX_Egress(){
   var height = document.getElementById('XO_h').value;
   var note = document.getElementById('XO_note')
   var op_w, op_h, sqft;
-  op_w=width/3-1.875
+  op_w=width/3-3.8125
   op_h=height-2.875
   sqft=op_h*op_w/144 
   note.innerHTML=Math.round(sqft*1000)/1000; 
