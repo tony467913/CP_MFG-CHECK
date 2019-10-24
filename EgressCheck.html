@@ -6,14 +6,12 @@
 </head>
 <body>
 
-
-
 <h1>
 	The Great 
 	<br>
 	<span id="colorDisplay">CP Window</span> 
 	<br>
-	MFG Check
+	Egress Check
 </h1>
 
 <div id="stripe">
@@ -36,18 +34,18 @@
     <th>Width</th>
     <th>Height</th>
     <th>Result</th>
-    <th>Note</th>
+    <th>Sq-ft</th>
     <th></th>
   </tr>
   
-  <tr id="hidePW" style="display:table-row">
+<!--   <tr id="hidePW" style="display:none">
     <td>PW</td>
     <td><input type="number" id="PW_w" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
     <td><input type="number" id="PW_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
     <td id="PW_result"></td>
     <td id="PW_note"></td>
     <td><button id="PW_btn" onclick="getPW_Result()">Click here!</button></td>
-  </tr>
+  </tr> -->
   
   <tr id="hideSH" style="display:table-row">
     <td>SH</td>
@@ -55,7 +53,7 @@
     <td><input type="number" id="SH_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
     <td id="SH_result"></td>
     <td id="SH_note"></td>
-    <td><button id="SH_btn" onclick="getSH_Result()">Click here!</button></td>
+    <td><button id="SH_btn" onclick="getSH_Egress()">Click here!</button></td>
   </tr>  
   <tr id="hideXO" style="display:table-row">
     <td>XO, OX</td>
@@ -63,7 +61,7 @@
     <td><input type="number" id="XO_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
     <td id="XO_result"></td>
     <td id="XO_note"></td>
-    <td><button id="XO_btn" onclick="getXO_Result()">Click here!</button></td>
+    <td><button id="XO_btn" onclick="getXO_Egress()">Click here!</button></td>
   </tr>
   <tr id="hideDH" style="display:none">
     <td>DH</td>
@@ -97,7 +95,7 @@
     <td id="UNEQXOX_note"></td>
     <td><button id="UNEQXOX_btn" onclick="getUNEQXOX_Result()">Click here!</button></td>
   </tr>
-  <tr id="hide2pd" style="display:table-row">
+  <tr id="hide2pd" style="display:none">
     <td>Vista SL 2PD</td>
     <td><input type="number" id="2PD_w" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
     <td><input type="number" id="2PD_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
@@ -105,7 +103,7 @@
     <td id="2PD_note"></td>
     <td><button id="2PD_btn" onclick="get2PD_Result()">Click here!</button></td>
   </tr>
-  <tr id="hide3pd" style="display:table-row">
+  <tr id="hide3pd" style="display:none">
     <td>Vista SL 3PD</td>
     <td><input type="number" id="3PD_w" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
     <td><input type="number" id="3PD_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
@@ -113,7 +111,7 @@
     <td id="3PD_note"></td>
     <td><button id="3PD_btn" onclick="get3PD_Result()">Click here!</button></td>
   </tr>
-  <tr id="hide4pd" style="display:table-row">
+  <tr id="hide4pd" style="display:none">
     <td>Vista SL 4PD</td>
     <td><input type="number" id="4PD_w" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
     <td><input type="number" id="4PD_h" autocomplete="off" class="Calc_input" placeholder=" " value="" style="font-size: 24px; width: 72px;"></td>
@@ -261,6 +259,7 @@
 </div>
 
 
-<script type="text/javascript" src="CheckSolution.js"></script>
+
+<script type="text/javascript" src="EgressCheck.js"></script>
 </body>
 </html>

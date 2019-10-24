@@ -52,10 +52,10 @@ function setupModeButtons(){
         document.getElementById("customers").style.display = "table";
         document.getElementById("shapes").style.display = "none";
         document.getElementById('PW_btn').onclick = function() {getPW_Result();}
-        document.getElementById('SH_btn').onclick = function() {getSH_Result();}
-        document.getElementById('XO_btn').onclick = function() {getXO_Result();}
-        document.getElementById('EQXOX_btn').onclick = function() {getEQXOX_Result();}
-        document.getElementById('UNEQXOX_btn').onclick = function() {getUNEQXOX_Result();}
+        document.getElementById('SH_btn').onclick = function() {getSH_Egress();}
+        document.getElementById('XO_btn').onclick = function() {getXO_Egress();}
+        document.getElementById('EQXOX_btn').onclick = function() {getEQXOX_Egress();}
+        document.getElementById('UNEQXOX_btn').onclick = function() {getUNEQXOX_Egress();}
         document.getElementById("hide2pd").style.display = "table-row";
         document.getElementById("hide3pd").style.display = "table-row";
         document.getElementById("hide4pd").style.display = "table-row";
@@ -682,16 +682,139 @@ function getXO_Egress(){
   op_w=width/2-3.5
   op_h=height-1.4375*2
   sqft=op_h*op_w/144
+  note.innerHTML=Math.round(sqft*1000)/1000; 
+  if (op_w>=20 && op_h>=24 && sqft>=5.7) {
+    result.innerHTML="PASS Egress";
+  } 
+  else {
+    result.innerHTML="FAIL";   
+  }       
+}
 
 function getSH_Egress(){
+  var result = document.getElementById('SH_result');
+  var width = document.getElementById('SH_w').value;
+  var height = document.getElementById('SH_h').value;
+  var note = document.getElementById('SH_note')
+  var op_w, op_h, sqft;
+  op_w=width-1.4375*2;
+  op_h=height/2-3.375;
+  sqft=op_h*op_w/144;
+  note.innerHTML=Math.round(sqft*1000)/1000;
+  if (op_w>=20 && op_h>=24 && sqft>=5.7) {
+    result.innerHTML="PASS Egress";
+  } 
+  else {
+    result.innerHTML="FAIL";   
+  }  
+}    
+
+function getUNEQXOX_Egress(){
   var result = document.getElementById('XO_result');
   var width = document.getElementById('XO_w').value;
   var height = document.getElementById('XO_h').value;
   var note = document.getElementById('XO_note')
   var op_w, op_h, sqft;
-  op_w=width-1.4375*2
-  op_h=height/2-3.375
+  op_w=width/4-1.875;
+  op_h=height-2.875;
+  sqft=op_h*op_w/144; 
+  note.innerHTML=Math.round(sqft*1000)/1000;  
+  if (op_w>=20 && op_h>=24 && sqft>=5.7) {
+    result.innerHTML="PASS Egress";
+  } 
+  else {
+    result.innerHTML="FAIL";   
+  }  
+}  
+
+function getEQXOX_Egress(){
+  var result = document.getElementById('XO_result');
+  var width = document.getElementById('XO_w').value;
+  var height = document.getElementById('XO_h').value;
+  var note = document.getElementById('XO_note')
+  var op_w, op_h, sqft;
+  op_w=width/3-1.875
+  op_h=height-2.875
+  sqft=op_h*op_w/144 
+  note.innerHTML=Math.round(sqft*1000)/1000; 
+  if (op_w>=20 && op_h>=24 && sqft>=5.7) {
+    result.innerHTML="PASS Egress";
+  } 
+  else {
+    result.innerHTML="FAIL";   
+  }  
+}  
+function getVP_XO_Egress(){
+  var result = document.getElementById('XO_result');
+  var width = document.getElementById('XO_w').value;
+  var height = document.getElementById('XO_h').value;
+  var note = document.getElementById('XO_note')
+  var op_w, op_h, sqft;
+  op_w=width/2-3.5
+  op_h=height-1.4375*2
   sqft=op_h*op_w/144
+  note.innerHTML=Math.round(sqft*1000)/1000; 
+  if (op_w>=20 && op_h>=24 && sqft>=5.7) {
+    result.innerHTML="PASS Egress";
+  } 
+  else {
+    result.innerHTML="FAIL";   
+  }       
+}
+
+function getVP_SH_Egress(){
+  var result = document.getElementById('SH_result');
+  var width = document.getElementById('SH_w').value;
+  var height = document.getElementById('SH_h').value;
+  var note = document.getElementById('SH_note')
+  var op_w, op_h, sqft;
+  op_w=width-1.4375*2;
+  op_h=height/2-3.375;
+  sqft=op_h*op_w/144;
+  note.innerHTML=Math.round(sqft*1000)/1000;
+  if (op_w>=20 && op_h>=24 && sqft>=5.7) {
+    result.innerHTML="PASS Egress";
+  } 
+  else {
+    result.innerHTML="FAIL";   
+  }  
+}    
+
+function getVP_UNEQXOX_Egress(){
+  var result = document.getElementById('XO_result');
+  var width = document.getElementById('XO_w').value;
+  var height = document.getElementById('XO_h').value;
+  var note = document.getElementById('XO_note')
+  var op_w, op_h, sqft;
+  op_w=width/4-1.875;
+  op_h=height-2.875;
+  sqft=op_h*op_w/144; 
+  note.innerHTML=Math.round(sqft*1000)/1000;  
+  if (op_w>=20 && op_h>=24 && sqft>=5.7) {
+    result.innerHTML="PASS Egress";
+  } 
+  else {
+    result.innerHTML="FAIL";   
+  }  
+}  
+
+function getVP_EQXOX_Egress(){
+  var result = document.getElementById('XO_result');
+  var width = document.getElementById('XO_w').value;
+  var height = document.getElementById('XO_h').value;
+  var note = document.getElementById('XO_note')
+  var op_w, op_h, sqft;
+  op_w=width/3-1.875
+  op_h=height-2.875
+  sqft=op_h*op_w/144 
+  note.innerHTML=Math.round(sqft*1000)/1000; 
+  if (op_w>=20 && op_h>=24 && sqft>=5.7) {
+    result.innerHTML="PASS Egress";
+  } 
+  else {
+    result.innerHTML="FAIL";   
+  }  
+}
 function getSH_Daylight(){
   var result = document.getElementById('XO_result');
   var width = document.getElementById('XO_w').value;
@@ -702,42 +825,8 @@ function getSH_Daylight(){
   fx_op_h=height/2-1.4375-1.125
   vt_op_w=width-5.5
   vt_op_h=height/2-4  
-function getUNEQXOX_Egress(){
-  var result = document.getElementById('XO_result');
-  var width = document.getElementById('XO_w').value;
-  var height = document.getElementById('XO_h').value;
-  var note = document.getElementById('XO_note')
-  var op_w, op_h, sqft;
-  op_w=width/4-1.875
-  op_h=height-2.875
-  sqft=op_h*op_w/144  
-  // if (24<=width && width<=72 && 12<=height && height<=72) {
-  //    result.innerHTML="PASS";
-  //     if (width*height/144/2<=15) {
-  //       note.innerHTML="Gold Label & 1/8 glass";
-  //     }
-  //     else{
-  //       note.innerHTML="Gold Label & 1/8 Tempered glass";
-  //     }
-      
-  // } 
-  // else {
-  //     if (16<=width && width<=140 && 9.375<=height && 
-  //       height<=80 && width*height/144/2<=18) {
-  //       result.innerHTML="PASS";
-  //       if (width*height/144/2<=15) {
-  //         note.innerHTML="No Gold Label & 1/8 glass";        
-  //     }
-  //       else{
-  //         note.innerHTML="No Gold Label & 1/8 Tempered glass";   
-  //       }       
-  //   }       
-  //     else {
-  //       result.innerHTML="FAIL";
-  //       note.innerHTML="";
-  //   }}
-}
-
+  result.innerHTML="PASS Egress";
+}  
 
 
 
