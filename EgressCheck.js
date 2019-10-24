@@ -343,7 +343,6 @@ function getVal_XO_Result(){
     }}
 }
 
-
 function getEQXOX_Result(){
 	var result = document.getElementById('EQXOX_result');
 	var width = document.getElementById('EQXOX_w').value;
@@ -710,10 +709,10 @@ function getSH_Egress(){
 }    
 
 function getUNEQXOX_Egress(){
-  var result = document.getElementById('XO_result');
-  var width = document.getElementById('XO_w').value;
-  var height = document.getElementById('XO_h').value;
-  var note = document.getElementById('XO_note')
+  var result = document.getElementById('UNEQXOX_result');
+  var width = document.getElementById('UNEQXOX_w').value;
+  var height = document.getElementById('UNEQXOX_h').value;
+  var note = document.getElementById('UNEQXOX_note')
   var op_w, op_h, sqft;
   op_w=width/4-1.875;
   op_h=height-2.875;
@@ -728,10 +727,10 @@ function getUNEQXOX_Egress(){
 }  
 
 function getEQXOX_Egress(){
-  var result = document.getElementById('XO_result');
-  var width = document.getElementById('XO_w').value;
-  var height = document.getElementById('XO_h').value;
-  var note = document.getElementById('XO_note')
+  var result = document.getElementById('EQXOX_result');
+  var width = document.getElementById('EQXOX_w').value;
+  var height = document.getElementById('EQXOX_h').value;
+  var note = document.getElementById('EQXOX_note')
   var op_w, op_h, sqft;
   op_w=width/3-3.8125
   op_h=height-2.875
@@ -781,10 +780,10 @@ function getVP_SH_Egress(){
 }    
 
 function getVP_UNEQXOX_Egress(){
-  var result = document.getElementById('XO_result');
-  var width = document.getElementById('XO_w').value;
-  var height = document.getElementById('XO_h').value;
-  var note = document.getElementById('XO_note')
+  var result = document.getElementById('UNEQXOX_result');
+  var width = document.getElementById('UNEQXOX_w').value;
+  var height = document.getElementById('UNEQXOX_h').value;
+  var note = document.getElementById('UNEQXOX_note')
   var op_w, op_h, sqft;
   op_w=width/4-2.125;
   op_h=height-2.875;
@@ -799,10 +798,10 @@ function getVP_UNEQXOX_Egress(){
 }  
 
 function getVP_EQXOX_Egress(){
-  var result = document.getElementById('XO_result');
-  var width = document.getElementById('XO_w').value;
-  var height = document.getElementById('XO_h').value;
-  var note = document.getElementById('XO_note')
+  var result = document.getElementById('EQXOX_result');
+  var width = document.getElementById('EQXOX_w').value;
+  var height = document.getElementById('EQXOX_h').value;
+  var note = document.getElementById('EQXOX_note')
   var op_w, op_h, sqft;
   op_w=width/3-3.8125
   op_h=height-2.875
@@ -815,6 +814,45 @@ function getVP_EQXOX_Egress(){
     result.innerHTML="FAIL";   
   }  
 }
+
+function getCA_Egress(){
+  var result = document.getElementById('CA_result');
+  var width = document.getElementById('CA_w').value;
+  var height = document.getElementById('CA_h').value;
+  var note = document.getElementById('CA_note')
+  var op_w, op_h, sqft;
+  op_w=width-11.75
+  op_h=height-5.625
+  sqft=op_h*op_w/144 
+  note.innerHTML=Math.round(sqft*1000)/1000; 
+  if (op_w>=20 && op_h>=24 && sqft>=5.7) {
+    result.innerHTML="PASS Egress";
+  } 
+  else {
+    result.innerHTML="FAIL";   
+  }  
+}
+
+// getAW_Egress is actually for CA w/ egress hinge
+function getAW_Egress(){
+  var result = document.getElementById('AW_result');
+  var width = document.getElementById('AW_w').value;
+  var height = document.getElementById('AW_h').value;
+  var note = document.getElementById('AW_note')
+  var op_w, op_h, sqft;
+  op_w=width-7.75
+  op_h=height-5.625
+  sqft=op_h*op_w/144 
+  note.innerHTML=Math.round(sqft*1000)/1000; 
+  if (op_w>=20 && op_h>=24 && sqft>=5.7) {
+    result.innerHTML="PASS Egress";
+  } 
+  else {
+    result.innerHTML="FAIL";   
+  }  
+}
+
+
 function getSH_Daylight(){
   var result = document.getElementById('XO_result');
   var width = document.getElementById('XO_w').value;
